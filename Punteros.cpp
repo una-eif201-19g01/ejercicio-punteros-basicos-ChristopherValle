@@ -15,6 +15,7 @@
 
 
 #include <iostream>
+#include <math.h>
 #include "Punteros.h"
 
 Punteros::Punteros() = default;
@@ -34,6 +35,19 @@ int Punteros::numeroAlCuboReferencia(int& numeroPtr) {
     return numeroPtr;
 }
 
+static int raizCuadradaCuboValor(int numero){
+    numero = sqrt(numero);
+    return numero;
+}
+static int raizCuadradaPuntero(int *numeroPtr){
+    *numeroPtr = sqrt(*numeroPtr);
+    return *numeroPtr;
+}
+static int raizCuadradaReferencia(int& numeroPtr){
+    numeroPtr = sqrt(numeroPtr);
+    return numeroPtr;
+}
+    
 void Punteros::imprimirDatosPuntero() {
     int numero = 0;
     int *numeroPtr = nullptr;
